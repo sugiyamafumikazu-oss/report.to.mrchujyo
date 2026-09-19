@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>障害年金申請の進め方　ご案内</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F4;
+  --card:#FFFFFF;
+  --ink:#1A2430;
+  --ink2:#4E5C6B;
+  --indigo:#1D3F66;
+  --indigo-soft:#E3EAF2;
+  --line:#D6DDE4;
+  --line-soft:#E7ECF1;
+  --now:#8A6417;
+  --now-bg:#FBF2DD;
+  --now-line:#E2C989;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#10151B;
+    --card:#19202A;
+    --ink:#E4EAF1;
+    --ink2:#A3B1C0;
+    --indigo:#93B8E4;
+    --indigo-soft:#22303F;
+    --line:#2E3946;
+    --line-soft:#242E3A;
+    --now:#E2BE72;
+    --now-bg:#2A2416;
+    --now-line:#5C4A22;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#10151B;
+  --card:#19202A;
+  --ink:#E4EAF1;
+  --ink2:#A3B1C0;
+  --indigo:#93B8E4;
+  --indigo-soft:#22303F;
+  --line:#2E3946;
+  --line-soft:#242E3A;
+  --now:#E2BE72;
+  --now-bg:#2A2416;
+  --now-line:#5C4A22;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",-apple-system,sans-serif;
+  font-size:17px;
+  line-height:1.95;
+  font-feature-settings:"palt" 1;
+}
+.sheet{
+  max-width:820px;
+  margin:0 auto;
+  background:var(--card);
+  padding:clamp(28px,5vw,64px) clamp(20px,5vw,64px) clamp(40px,6vw,72px);
+  border-left:1px solid var(--line-soft);
+  border-right:1px solid var(--line-soft);
+  min-height:100vh;
+}
+
+/* ---- 見出しまわり ---- */
+.masthead{
+  border-bottom:3px solid var(--indigo);
+  padding-bottom:18px;
+  margin-bottom:10px;
+}
+.masthead h1{
+  font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-weight:600;
+  font-size:clamp(23px,4.4vw,31px);
+  line-height:1.5;
+  letter-spacing:.04em;
+  color:var(--indigo);
+  margin:0 0 6px;
+}
+.masthead .lede{
+  margin:0;
+  color:var(--ink2);
+  font-size:15px;
+  line-height:1.8;
+}
+.meta{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+  gap:2px 18px;
+  margin:14px 0 0;
+  padding:0;
+  list-style:none;
+  font-size:14.5px;
+  color:var(--ink2);
+  text-align:right;
+}
+.meta li{white-space:nowrap}
+
+section{
+  display:grid;
+  grid-template-columns:2.6rem 1fr;
+  column-gap:14px;
+  margin-top:40px;
+}
+section > h2{
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:subgrid;
+  align-items:baseline;
+  font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-weight:600;
+  font-size:19px;
+  line-height:1.6;
+  letter-spacing:.03em;
+  color:var(--indigo);
+  margin:0 0 16px;
+  padding-bottom:7px;
+  border-bottom:1px solid var(--line);
+}
+section > h2 .n{
+  font-size:15px;
+  color:var(--ink2);
+  font-variant-numeric:tabular-nums;
+}
+section > *:not(h2){grid-column:2}
+@media (max-width:620px){
+  section{grid-template-columns:1fr}
+  section > h2{grid-template-columns:auto 1fr}
+  section > *:not(h2){grid-column:1}
+}
+
+h3{
+  font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;
+  font-weight:500;
+  font-size:16px;
+  color:var(--ink);
+  margin:26px 0 10px;
+}
+h3:first-of-type{margin-top:0}
+p{margin:0 0 14px}
+p:last-child{margin-bottom:0}
+
+ul.plain{margin:0 0 4px;padding:0;list-style:none}
+ul.plain li{
+  position:relative;
+  padding-left:1.1em;
+  margin-bottom:8px;
+}
+ul.plain li::before{
+  content:"・";
+  position:absolute;
+  left:0;
+  color:var(--ink2);
+}
+.route{font-weight:500}
+.route .to{color:var(--ink2);padding:0 .35em}
+
+/* ---- 定義リスト（もとの表） ---- */
+dl.facts{
+  margin:0;
+  border-top:1px solid var(--line);
+}
+dl.facts > div{
+  display:grid;
+  grid-template-columns:11.5em 1fr;
+  border-bottom:1px solid var(--line);
+}
+dl.facts dt{
+  padding:11px 14px 11px 12px;
+  background:var(--indigo-soft);
+  font-weight:500;
+  font-size:15px;
+  line-height:1.7;
+}
+dl.facts dd{
+  margin:0;
+  padding:11px 4px 11px 16px;
+  font-size:15.5px;
+  line-height:1.8;
+}
+dl.facts dd span{display:block}
+@media (max-width:620px){
+  dl.facts > div{grid-template-columns:1fr}
+  dl.facts dt{padding:7px 12px}
+  dl.facts dd{padding:10px 12px 13px}
+}
+
+/* ---- これからの流れ ---- */
+ol.flow{
+  margin:0;
+  padding:0;
+  list-style:none;
+  counter-reset:step;
+}
+ol.flow > li{
+  position:relative;
+  counter-increment:step;
+  padding:0 0 22px 46px;
+}
+ol.flow > li::before{
+  content:counter(step);
+  position:absolute;
+  left:0;
+  top:1px;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--card);
+  color:var(--ink2);
+  font-size:14px;
+  line-height:26px;
+  text-align:center;
+  font-variant-numeric:tabular-nums;
+}
+ol.flow > li::after{
+  content:"";
+  position:absolute;
+  left:14px;
+  top:31px;
+  bottom:2px;
+  width:1px;
+  background:var(--line);
+}
+ol.flow > li:last-child{padding-bottom:0}
+ol.flow > li:last-child::after{display:none}
+ol.flow h4{
+  margin:0 0 2px;
+  font-size:16px;
+  font-weight:700;
+  line-height:1.7;
+}
+ol.flow p{
+  margin:0;
+  font-size:15.5px;
+  color:var(--ink2);
+  line-height:1.85;
+}
+ol.flow > li.now::before{
+  border-color:var(--now-line);
+  background:var(--now-bg);
+  color:var(--now);
+  font-weight:700;
+}
+ol.flow > li.now .body{
+  background:var(--now-bg);
+  border:1px solid var(--now-line);
+  border-radius:3px;
+  padding:12px 15px;
+  margin-top:-9px;
+}
+ol.flow > li.now p{color:var(--ink)}
+.badge{
+  display:inline-block;
+  margin-left:8px;
+  padding:1px 9px;
+  border-radius:2px;
+  background:var(--now);
+  color:var(--now-bg);
+  font-size:12.5px;
+  font-weight:700;
+  letter-spacing:.06em;
+  vertical-align:middle;
+}
+
+/* ---- 注記・フッタ ---- */
+.note{
+  border-left:3px solid var(--line);
+  padding:2px 0 2px 16px;
+  color:var(--ink2);
+  font-size:15.5px;
+}
+footer{
+  margin-top:52px;
+  padding-top:20px;
+  border-top:3px solid var(--indigo);
+  font-size:14.5px;
+  line-height:1.9;
+  color:var(--ink2);
+}
+footer strong{color:var(--ink);font-weight:500;font-size:15.5px}
+footer p{margin:0}
+
+@media print{
+  body{background:#fff;font-size:10.5pt;line-height:1.75}
+  .sheet{max-width:none;border:0;padding:0;min-height:0}
+  section{margin-top:22px;break-inside:avoid}
+  dl.facts,ol.flow{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<main class="sheet">
+
+  <header class="masthead">
+    <h1>障害年金申請の進め方　ご案内</h1>
+    <p class="lede">労災の手続きと併行して進めている、障害年金の請求手続きについてのご説明です。</p>
+    <ul class="meta">
+      <li>令和8年9月18日</li>
+      <li>社会保険労務士法人キャリアデザイン</li>
+      <li>社会保険労務士　杉山 史和　TEL 055-960-9323</li>
+    </ul>
+  </header>
+
+  <section>
+    <h2><span class="n">1</span><span>現在の状況</span></h2>
+    <p>労災（労働者災害補償保険）の手続きと併行して、障害年金の請求手続きを進めておりますが、一連の流れと状況についてご説明いたします。</p>
+    <p>今回は、次の2つの障害について、それぞれ別に請求します。診断書も傷病ごとに分かれるため、病院も別々になります。</p>
+    <ul class="plain">
+      <li class="route">肢体の障害（第1腰椎破裂骨折などによる体の不自由さ）<span class="to">→</span>中伊豆温泉病院</li>
+      <li class="route">精神の障害（うつ病）<span class="to">→</span>順天堂大学医学部附属静岡病院 メンタルクリニック</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span><span>基本情報</span></h2>
+    <dl class="facts">
+      <div><dt>お名前</dt><dd>中條 英明 様</dd></div>
+      <div><dt>事故（受傷）日</dt><dd>令和5年8月9日　気仙沼港での船舶陸揚げ作業中の事故</dd></div>
+      <div><dt>事故直後の受診先</dt><dd>気仙沼市立病院（救急搬送）</dd></div>
+      <div><dt>請求の方法</dt><dd>遡及請求（障害認定日の分と、現在の分の2通の診断書で請求します）</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span><span>障害年金のしくみ（かんたんに）</span></h2>
+    <ul class="plain">
+      <li>障害年金は、①初診日、②保険料の納付状況、③障害の状態（等級）の3つで決まります。</li>
+      <li>初診日から1年6か月たった日を「障害認定日」といいます。</li>
+      <li>障害認定日のころの状態でも年金に該当していたと認められれば、その翌月分からさかのぼって受け取れます（遡及請求）。</li>
+      <li>そのため、「障害認定日のころの診断書」と「現在の診断書」の2通を用意します。認定日の診断書は、原則として認定日から3か月以内に受診した日の状態で書いてもらう必要があります。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span><span>肢体の障害（第1腰椎破裂骨折など）</span></h2>
+
+    <h3>(1) 日付の整理</h3>
+    <dl class="facts">
+      <div><dt>初診日</dt><dd>令和5年8月9日（気仙沼市立病院）</dd></div>
+      <div><dt>障害認定日</dt><dd>令和7年2月9日（初診日から1年6か月後）</dd></div>
+      <div><dt>認定日の診断書が使える期間</dt><dd>令和7年2月9日 ～ 令和7年5月8日</dd></div>
+      <div><dt>その時期の状況</dt><dd>めまい・頭鳴りの治療のため、香川県の松井病院に入院中でした</dd></div>
+      <div><dt>診断書の依頼先</dt><dd>JA静岡厚生連 中伊豆温泉病院　整形外科　牟田 智也 先生</dd></div>
+      <div><dt>依頼している診断書</dt><dd><span>① 令和7年5月13日現症（障害認定日の代わり）</span><span>② 令和8年8月現症（現在分）　※計2通</span></dd></div>
+      <div><dt>依頼日</dt><dd>令和8年8月20日（中伊豆温泉病院へ依頼）</dd></div>
+    </dl>
+
+    <h3>(2) いま調整していること</h3>
+    <p>障害認定日の3か月間（令和7年2月9日～5月8日）は、めまい・頭鳴りの治療のため松井病院に入院されていたため、本来はこの期間の診断書が必要になります。しかし松井病院に確認したところ、関節の動く範囲（可動域）や筋力の計測データがないため、障害年金用の診断書は作成できないとの回答でした。</p>
+    <p>そこで、松井病院を退院された直後に受診された中伊豆温泉病院の令和7年5月13日の診断書を、障害認定日の代わりとして提出する方針としています。やむを得ない事情を説明する申立書もあわせて提出し、松井病院に入院していた期間も同じような症状が続いていたと推測される場合には、その旨も診断書に記載していただけるようお願いしています。</p>
+    <p>ただし、令和7年5月13日は認定日から3か月の期間をわずかに外れており、当時は計測も行われていませんでした。そのため、作成できるかどうかは先生のご判断になります。現在、医事課の方から先生に作成の可否をご確認いただいており、作成できるようであればお願いしたい旨をお伝えしています。なお、認定日の分が作成できない場合は、現在の診断書で「事後重症請求」（今後の分から受け取る請求）に切り替えて進めます。</p>
+
+    <h3>(3) すでに済んでいること</h3>
+    <ul class="plain">
+      <li>気仙沼市立病院の「受診状況等証明書」（初診日の証明）は受領済みです。</li>
+      <li>中伊豆温泉病院への診断書2通のご依頼は済んでいます（令和8年8月20日）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span><span>精神の障害（うつ病）</span></h2>
+
+    <h3>(1) 日付の整理</h3>
+    <dl class="facts">
+      <div><dt>障害認定日</dt><dd>令和7年5月14日</dd></div>
+      <div><dt>認定日の診断書が使える期間</dt><dd>令和7年5月14日 ～ 令和7年8月13日</dd></div>
+      <div><dt>診断書の依頼先</dt><dd>順天堂大学医学部附属静岡病院 メンタルクリニック　前嶋 仁 先生</dd></div>
+      <div><dt>依頼している診断書</dt><dd><span>① 令和7年5月14日～8月13日の間の受診日現症（障害認定日分）</span><span>② 令和8年9月時点の受診日現症（現在分）　※計2通</span></dd></div>
+      <div><dt>依頼日</dt><dd>令和8年9月15日（中條様経由で先生へご依頼）</dd></div>
+    </dl>
+
+    <h3>(2) 補足</h3>
+    <ul class="plain">
+      <li>精神の障害の等級は、日常生活の場面（食事・身のまわり・金銭管理・通院・人とのやりとりなど）で、どのくらい助けが必要かという点が重視されます。</li>
+      <li>肢体の障害と精神の障害の両方に該当する場合は、あわせて等級が判断されることがあります（併合認定）。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span><span>これからの流れ</span></h2>
+    <ol class="flow">
+      <li class="now">
+        <div class="body">
+          <h4>診断書の受け取り<span class="badge">今はこの段階です</span></h4>
+          <p>中伊豆温泉病院、順天堂大学医学部附属静岡病院の診断書が完成するのを待っています。気仙沼市立病院の受診状況等証明書は受領済みです。</p>
+        </div>
+      </li>
+      <li>
+        <h4>書類の内容チェック</h4>
+        <p>診断書がそろったら、社労士が記載漏れ・日付の誤り等を確認します。必要があれば、病院へ訂正や追記をお願いします。見立てを社労士からお伝えします。</p>
+      </li>
+      <li>
+        <h4>病歴・就労状況等申立書の作成</h4>
+        <p>発病から現在までの経緯を、ご本人の立場からまとめる書類です。こちらで作成します。</p>
+      </li>
+      <li>
+        <h4>請求書類一式の作成・最終確認</h4>
+        <p>年金請求書や年金生活者支援給付金、病歴就労状況申立書などを作成、印刷、最終確認します。</p>
+      </li>
+      <li>
+        <h4>年金事務所へ提出</h4>
+        <p>当方が代理人として提出します。</p>
+      </li>
+      <li>
+        <h4>審査</h4>
+        <p>おおむね3か月程度が目安です（混み具合により前後します）。追加の資料を求められることもあります。</p>
+      </li>
+      <li>
+        <h4>結果の確認</h4>
+        <p>決定通知書・年金証書は、日本年金機構からご本人のお手元に届きます。内容を確認のうえ、その後の手続きについてご案内します。支給が決まれば、通常その翌々月ごろから入金が始まります。</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span><span>労災との関係</span></h2>
+    <p class="note">労災の年金と障害年金は両方受け取れますが、同じ事故が原因のため、労災側で調整（減額）があります。</p>
+  </section>
+
+  <section>
+    <h2><span class="n">8</span><span>ご留意いただきたいこと</span></h2>
+    <ul class="plain">
+      <li>診断書の内容は主治医の先生のご判断によります。当方から結果をお約束することはできません。</li>
+      <li>ご不明な点や不安なことは、途中でも遠慮なくご連絡ください。</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p><strong>お問い合わせ先：社会保険労務士法人キャリアデザイン／静岡障害年金サポートきぼう</strong></p>
+    <p>〒411-0035　静岡県三島市大宮町3-2-12　TEL 055-960-9323　FAX 055-973-1032</p>
+    <p>社会保険労務士　杉山 史和</p>
+  </footer>
+
+</main>
+
+</body>
+</html>
